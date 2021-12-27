@@ -1,0 +1,17 @@
+/* - GENERAL - */
+*,
+*::after,
+*::before {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* -- FORM -- */
+.form-title {
+  background: #c1d4fa;
+}
+
+.form-label {
+    margin-bottom: 0.2rem;
+}
