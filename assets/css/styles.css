@@ -2,9 +2,9 @@
 *,
 *::after,
 *::before {
-    box-sizing:border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* -- FORM -- */
@@ -13,5 +13,9 @@
 }
 
 .form-label {
-    margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
+}
+
+.is-invalid {
+  background-color: #fae2e5;
 }

@@ -29,75 +29,83 @@
         <main class="row border border-1 rounded-3 shadow-sm mt-2 mx-1 pt-2 pb-3">
           <div class="col-12 col-md-5 py-2">
             <label class="form-label" for="card-number">Card #</label>
-            <input type="text" name="card-number" id="card-number" class="form-control shadow-none" placeholder="XXXXXXXXXXXXXXXXXX"/>
+            <input type="number" name="card-number" id="card-number" class="form-control shadow-none" placeholder="XXXXXXXXXXXXXXXXXX" min="0" />
+            <div class="invalid-feedback">Invalid card number!</div>
           </div>
           <div class="col-12 col-md-3 py-2">
             <label class="form-label" for="cvc">CVC #</label>
-            <input type="text" name="cvc" id="cvc" class="form-control shadow-none" placeholder="0000" />
+            <input type="number" name="cvc" id="cvc" class="form-control shadow-none" placeholder="0000" min="0" />
+            <div class="invalid-feedback">Invalid CVC!</div>
           </div>
           <div class="col-12 col-md-4 py-2">
             <label class="form-label" for="amount">Amount</label>
             <div class="input-group">
               <span class="input-group-text border-0 bg-transparent fw-bold p-0 pe-1">$</span>
-              <input type="text" name="amount" id="amount" class="form-control shadow-none rounded-3" />
+              <input type="number" name="amount" id="amount" class="form-control shadow-none rounded-3" min="0" />
+              <div class="invalid-feedback">Invalid amount!</div>
             </div>
           </div>
 
           <div class="col-12 col-md-6 py-2">
             <label class="form-label" for="first-name">First Name</label>
             <input type="text" name="first-name" id="first-name" class="form-control shadow-none" />
+            <div class="invalid-feedback">Invalid first name!</div>
           </div>
           <div class="col-12 col-md-6 py-2">
             <label class="form-label" for="last-name">Last Name</label>
             <input type="text" name="last-name" id="last-name" class="form-control shadow-none" />
+            <div class="invalid-feedback">Invalid last name!</div>
           </div>
 
           <div class="col-12 col-md-6 py-2">
             <label class="form-label" for="city">City</label>
             <select name="city" id="city" class="form-select shadow-none">
-              <option selected disabled>-- Pick a city --</option>
+              <option value="" selected disabled>-- Pick a city --</option>
               <option value="spain">Spain</option>
               <option value="mexico">Mexico</option>
               <option value="denmark">Denmark</option>
               <option value="france">France</option>
             </select>
+            <div class="invalid-feedback">Pick a city!!</div>
           </div>
 
           <div class="col-12 col-md-3 py-2">
             <label class="form-label" for="state">State</label>
             <select name="state" id="state" class="form-select shadow-none">
-              <option selected disabled>-- Pick a state --</option>
-              <option value="spain">Spain</option>
-              <option value="mexico">Mexico</option>
-              <option value="denmark">Denmark</option>
-              <option value="france">France</option>
+              <option value="" selected disabled>-- Pick a state --</option>
+              <option value="spain">Madrid</option>
+              <option value="mexico">París</option>
+              <option value="denmark">Berlín</option>
+              <option value="france">New York</option>
             </select>
+            <div class="invalid-feedback">Pick a state!</div>
           </div>
 
           <div class="col-12 col-md-3 py-2">
             <label class="form-label" for="postal-code">Postal Code</label>
-            <input type="text" name="postal-code" id="postal-code" class="form-control shadow-none" />
+            <input type="number" name="postal-code" id="postal-code" class="form-control shadow-none" min="0" />
+            <div class="invalid-feedback">Invalid postal code!</div>
           </div>
 
           <div class="col-12 col-md-6 py-2">
             We accept:
 
-            <div class="col-8 col-md-8 d-flex flex-wrap justify-content-center align-items-center mt-2 bg-secondary bg-opacity-75 p-1 rounded-3">
+            <div class="col-8 col-md-8 d-flex flex-wrap justify-content-center align-items-center mt-2 bg-light p-1 border border-1 rounded-3 shadow-sm">
               <div class="form-check me-3">
-                <label for="mastercard" class="form-check-label shadow-none"><i class="fab fa-lg fa-cc-mastercard"></i></label>
-                <input type="radio" class="form-check-input" name="bank" id="mastercard">
+                <label for="mastercard" class="form-check-label"><i class="fab fa-lg fa-cc-mastercard"></i></label>
+                <input type="radio" class="form-check-input" name="bank" id="mastercard" required>
               </div>
               <div class="form-check me-3">
-                <label for="visa" class="form-check-label shadow-none"><i class="fab fa-lg fa-cc-visa"></i></label>
-                <input type="radio" class="form-check-input" name="bank" id="visa">
+                <label for="visa" class="form-check-label"><i class="fab fa-lg fa-cc-visa"></i></label>
+                <input type="radio" class="form-check-input" name="bank" id="visa" required>
               </div>
               <div class="form-check me-3">
-                <label for="diner" class="form-check-label shadow-none"><i class="fab fa-lg fa-cc-diners-club"></i></label>
-                <input type="radio" class="form-check-input" name="bank" id="diners">
+                <label for="diner" class="form-check-label"><i class="fab fa-lg fa-cc-diners-club"></i></label>
+                <input type="radio" class="form-check-input" name="bank" id="diners" required>
               </div>
               <div class="form-check me-3">
-                <label for="american" class="form-check-label shadow-none"><i class="fab fa-lg fa-cc-amex"></i></label>
-                <input type="radio" class="form-check-input" name="bank" id="american">
+                <label for="american" class="form-check-label"><i class="fab fa-lg fa-cc-amex"></i></label>
+                <input type="radio" class="form-check-input" name="bank" id="american" required>
               </div>    
             </div>
           </div>
@@ -106,17 +114,16 @@
             <label class="form-label" for="message">Message</label>
             <textarea class="form-control shadow-none" name="message" id="message"></textarea>
             <small>Add any notes here.</small>
+            <div class="invalid-feedback">Wee need more information!</div>
           </div>
         </main>
       </form>
 
       <!-- FORM FOOTER -->
       <footer class="row my-2 bg-light border border-1 rounded-3 shadow-sm mx-1">
-        <div
-          class="col-12 p-2 d-flex justify-content-end align-items-center gap-2"
-        >
-          <button type="button" class="btn btn-sm btn-secondary">Cancel</button>
-          <button type="button" class="btn btn-sm btn-primary">Send</button>
+        <div class="col-12 p-2 d-flex justify-content-end align-items-center gap-2">
+          <button type="submit" class="btn btn-sm btn-secondary shadow-none" onclick="alert('Cancel button pressed!');">Cancel</button>
+          <button type="submit" form="main-form" class="btn btn-sm btn-primary shadow-none">Send</button>
         </div>
       </footer>
     </div>
