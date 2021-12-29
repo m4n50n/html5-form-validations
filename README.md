@@ -1,6 +1,6 @@
 # ![4Geeks Logo](http://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=4geeks,16) HTML5 Form Validations
 
-✏ *Form Validations with HTML5. Inspired in **./preview.gif***.
+✏ *Form Validations with HTML5. Using Javascript to validate the inputs of an HTML form (on submit). Inspired in **./preview.gif***.
 
 ## What to do next?
 
