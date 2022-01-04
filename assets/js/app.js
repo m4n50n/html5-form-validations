@@ -11,6 +11,15 @@ const FormElements = {
     message: null
 }
 
+const CheckInput = (input) => {
+    const inputValue = input.value;
+    const inputType = input.type;
+
+    if (inputValue.length === 0 || (inputType === "number" && (isNaN(inputValue) || parseInt(inputValue) < 0))) { return false; } // numeric inputs values must be a number greater than zero
+    
+    return true;
+}
+
 const CheckFormElements = () => {
     FormElements.card = document.querySelector("#card-number");
     FormElements.cvc = document.querySelector("#cvc");
@@ -24,8 +33,9 @@ const CheckFormElements = () => {
 
     for (const property in FormElements) {
         const FormItem = FormElements[property];
+        
         FormItem.classList.remove("is-valid", "is-invalid"); // remove previous class
-        FormItem.classList.add((!FormItem.checkValidity()) ? "is-invalid" : "is-valid"); // assign new class according to validity
+        FormItem.classList.add((!CheckInput(FormItem)) ? "is-invalid" : "is-valid"); // assign new class according to validity
     }
 }
 
