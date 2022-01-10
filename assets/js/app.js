@@ -1,15 +1,5 @@
 const Form = document.querySelector("form");
-const FormElements = {
-    card: null,
-    cvc: null,
-    amount: null,
-    first_name: null,
-    last_name: null,
-    city: null,
-    state: null,
-    postal_code: null,
-    message: null
-}
+const FormElements = {}
 
 const CheckInput = (input) => {
     const inputValue = input.value;
@@ -21,6 +11,7 @@ const CheckInput = (input) => {
 }
 
 const CheckFormElements = () => {
+    /* Insert elements as object property */
     FormElements.card = document.querySelector("#card-number");
     FormElements.cvc = document.querySelector("#cvc");
     FormElements.amount = document.querySelector("#amount");
